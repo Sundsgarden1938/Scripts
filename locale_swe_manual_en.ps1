@@ -213,8 +213,8 @@ try {
 # --- Done ---
 if ($global:RebootSuggested) {
   Write-Info "Done. A restart is recommended for system-wide language changes."
-  exit 3010
+   3010
 } else {
   Write-Info "Done. Some apps may require restart to switch language."
-  exit 0
+   0
 }
