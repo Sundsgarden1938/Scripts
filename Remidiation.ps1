@@ -151,4 +151,5 @@ foreach ($pc in @(
   Log = $Global:LogFile
 } | ConvertTo-Json -Compress | Out-Null
 
-exit 0
+ 0
+
