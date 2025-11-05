@@ -40,7 +40,6 @@ $global:RebootSuggested = $false
 
 if (-not (Test-IsAdmin)) {
   Write-Err "Please start PowerShell as Administrator (Run as administrator)."
-   2
 }
 
 Write-Verbose "Starting at $(Get-Date) as $env:USERNAME"
@@ -50,7 +49,6 @@ if ($env:PROCESSOR_ARCHITEW6432) {
   Write-Verbose "Detected 32-bit host on 64-bit OS. Relaunching in 64-bit PowerShell..."
   $args = @('-NoProfile','-ExecutionPolicy','Bypass','-File',"`"$PSCommandPath`"","-Lang","$Lang","-Verbose")
   Start-Process -FilePath "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList $args -Verb RunAs
-   0
 }
 
 # --- 1) Install sv-SE language pack (best-effort) ---
@@ -213,8 +211,6 @@ try {
 # --- Done ---
 if ($global:RebootSuggested) {
   Write-Info "Done. A restart is recommended for system-wide language changes."
-   3010
 } else {
   Write-Info "Done. Some apps may require restart to switch language."
-   0
 }
